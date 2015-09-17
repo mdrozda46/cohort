@@ -27,8 +27,10 @@ namespace WarmupTests
 
         public void AreWeInTroubleTest(bool a, bool b, bool expected)
         {
+            //Act
             bool actual = _conditionals.AreWeInTrouble(a,b);
 
+            //Assert
             Assert.AreEqual(expected, actual);
         }
     }

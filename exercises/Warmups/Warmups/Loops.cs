@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace Warmups
 {
-    class Loops
+    public class Loops
     {
+        public string StringTimes(string str, int n)
+        {
+           string message = "";
+            for (int i = 0; i < n; i++)
+            {
+                
+                message += str;
+            }
+            return message;
+        }
     }
 }

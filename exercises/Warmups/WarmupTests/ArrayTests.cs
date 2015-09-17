@@ -5,34 +5,34 @@ using System.Text;
 using System.Threading.Tasks;
 using Warmups;
 using NUnit.Framework;
-using Strings = Warmups.Strings;
+
 
 namespace WarmupTests
 {
     [TestFixture]
-    public class StringTests
+    public class ArrayTests
     {
-
-        private Strings _strings;
+        private Arrays _arrays;
 
         [SetUp]
         public void BeforeEachTest()
         {
-            _strings = new Strings();
+            _arrays = new Arrays();
         }
 
-        [TestCase("Bob", "Hello Bob!")]
-        [TestCase("Alice", "Hello Alice!")]
-        [TestCase("X", "Hello X!")]
-        public void SayHiTest(string name, string expected)
+        [TestCase(new int[] {1,2,6}, true)]
+        [TestCase(new int[] {6, 1, 2, 3}, true)]
+        [TestCase(new int[] { 13, 6, 1, 2, 3}, false)]
+
+
+
+        public void FirstLast6Test(int[] numbers, bool expected)
         {
             //Act
-            string actual = _strings.SayHi(name);
+            bool actual = _arrays.FirstLast6(numbers);
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
     }
 }
-
-    

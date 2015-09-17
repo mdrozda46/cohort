@@ -5,34 +5,32 @@ using System.Text;
 using System.Threading.Tasks;
 using Warmups;
 using NUnit.Framework;
-using Strings = Warmups.Strings;
+
 
 namespace WarmupTests
 {
     [TestFixture]
-    public class StringTests
+    public class LoopsTests
     {
-
-        private Strings _strings;
+        private Loops _loops;
 
         [SetUp]
         public void BeforeEachTest()
         {
-            _strings = new Strings();
+           _loops = new Loops();
         }
 
-        [TestCase("Bob", "Hello Bob!")]
-        [TestCase("Alice", "Hello Alice!")]
-        [TestCase("X", "Hello X!")]
-        public void SayHiTest(string name, string expected)
+        [TestCase("Hi", 2, "HiHi")]
+        [TestCase("Hi", 3, "HiHiHi")]
+        [TestCase("Hi", 1, "Hi")]
+
+        public void StringTimes(string str, int num, string expected)
         {
             //Act
-            string actual = _strings.SayHi(name);
+            string actual = _loops.StringTimes(str, num);
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
     }
 }
-
-    
