@@ -94,6 +94,7 @@ namespace StringCalculatorKataTests
         }
 
         [TestCase("//[***]\n1***2***3", 6)]
+        [TestCase("//[$$$$]\n1$$$$2$$$$4", 7)]
         public void AnyLengthDelimeter(string numbers, int expectedResult)
         {
             int result = _stringCalculator.Add(numbers);

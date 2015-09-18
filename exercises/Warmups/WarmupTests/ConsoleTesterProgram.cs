@@ -3,64 +3,64 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Warmups;
 
-
-namespace Warmups
+namespace WarmupsTests
 {
     class Program
     {
         static void Main(string[] args)
         {
             Strings obj = new Strings();
-            //Warmup 1
+            //String Warmup 1
             Console.WriteLine(obj.SayHi("Bob"));
             Console.WriteLine(obj.SayHi("Alice"));
             Console.WriteLine(obj.SayHi("X"));
-            //Warmup 2
+            //String Warmup 2
             Console.WriteLine(obj.Abba("Hi", "Bye"));
             Console.WriteLine(obj.Abba("Yo", "Alice"));
             Console.WriteLine(obj.Abba("What", "Up"));
-            //Warmup 3
+            //String Warmup 3
             Console.WriteLine(obj.MakeTags("i", "Yay"));
             Console.WriteLine(obj.MakeTags("i", "Hello"));
             Console.WriteLine(obj.MakeTags("cite", "Yay"));
-            //Warmup 4
+            //String Warmup 4
             Console.WriteLine(obj.InsertWord("<<>>", "Yay"));
             Console.WriteLine(obj.InsertWord("<<>>", "WooHoo"));
             Console.WriteLine(obj.InsertWord("[[]]", "word"));
-            //Warmup 5
+            //String Warmup 5
             Console.WriteLine(obj.MultipleEndings("Hello"));
             Console.WriteLine(obj.MultipleEndings("ab"));
             Console.WriteLine(obj.MultipleEndings("Hi"));
-            //Warmup 6
+            //String Warmup 6
             Console.WriteLine(obj.FirstHalf("WooHoo"));
             Console.WriteLine(obj.FirstHalf("HelloThere"));
             Console.WriteLine(obj.FirstHalf("abcdef"));
-            //Warmup 7 
+            //String Warmup 7 
             Console.WriteLine(obj.TrimOne("Hello"));
             Console.WriteLine(obj.TrimOne("java"));
             Console.WriteLine(obj.TrimOne("coding"));
-            //Warmup 8 
+            //String Warmup 8 
             Console.WriteLine(obj.LongInMiddle("Hello", "hi"));
             Console.WriteLine(obj.LongInMiddle("hi", "Hello"));
             Console.WriteLine(obj.LongInMiddle("aaa", "b"));
-            //Warmup 9
+            //String Warmup 9
             Console.WriteLine(obj.Rotateleft2("Hello"));
             Console.WriteLine(obj.Rotateleft2("java"));
             Console.WriteLine(obj.Rotateleft2("Hi"));
-            //Warmup 10
+            //String Warmup 10
             Console.WriteLine(obj.RotateRight2("Hello"));
             Console.WriteLine(obj.RotateRight2("java"));
             Console.WriteLine(obj.RotateRight2("Hi"));
-            //Warmup 11
+            //String Warmup 11
             Console.WriteLine(obj.TakeOne("Hello", true));
             Console.WriteLine(obj.TakeOne("Hello", false));
             Console.WriteLine(obj.TakeOne("oh", true));
-            //Warmup 12
+            //String Warmup 12
             Console.WriteLine(obj.MiddleTwo("string"));
             Console.WriteLine(obj.MiddleTwo("code"));
             Console.WriteLine(obj.MiddleTwo("Practice"));
-            //Warmup 13
+            //String Warmup 13
             Console.WriteLine(obj.EndsWithLy("oddly"));
             Console.WriteLine(obj.EndsWithLy("y"));
             Console.WriteLine(obj.EndsWithLy("oddy"));

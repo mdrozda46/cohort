@@ -16,9 +16,11 @@ namespace StringCalculatorKata
                 return 0;
             }
 
-            string[] delimiters = { "\n", "," };
+            List<string> delimitersList = new List<string>();
 
-            
+            delimitersList.Add("\n");
+            delimitersList.Add(",");
+
             if (numbers.StartsWith("//"))
             {
 
@@ -46,6 +48,7 @@ namespace StringCalculatorKata
                 numbers = numbers.Replace(customDelimiter, ",");
             }
             
+            string[] delimiters = delimitersList.ToArray();
             string[] array = numbers.Split(delimiters, StringSplitOptions.None);
 
             bool hasNegatives = false;
