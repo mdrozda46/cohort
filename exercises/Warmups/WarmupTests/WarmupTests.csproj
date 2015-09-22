@@ -46,7 +46,6 @@
   <ItemGroup>
     <Compile Include="ArrayTests.cs" />
     <Compile Include="ConditionalsTests.cs" />
-    <Compile Include="ConsoleTesterProgram.cs" />
     <Compile Include="LogicTests.cs" />
     <Compile Include="LoopsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
