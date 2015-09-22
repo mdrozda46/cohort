@@ -63,7 +63,6 @@ namespace Warmups
         }
 
         // 05 - Parrot Trouble
-
         public bool ParrotTrouble(bool isTalking, int hour)
         {
             if (isTalking == true && (hour < 7 || hour > 20))
