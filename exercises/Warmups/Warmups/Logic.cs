@@ -208,5 +208,84 @@ namespace Warmups
                 return false;
             }
         }
+
+        // 12 - AnswerCell
+        public bool AnswerCell(bool isMorning, bool isMom, bool isAsleep)
+        {
+            if (!isMorning && !isAsleep)
+            {
+                return true; 
+            }
+            
+            else if (isMorning && isMom && !isAsleep)
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
+
+        }
+
+        // 13 - TwoIsOne
+        public bool TwoIsOne(int a, int b, int c)
+        {
+            if (a + b == c || a + c == b || b + c == a)
+            {
+                return true;
+            }
+            else
+            {
+                return false; 
+            }
+
+        }
+
+        // 14 - AreInOrder
+        public bool AreInOrder(int a, int b, int c, bool bOk)
+        {
+            if ((b > a && c > b) || (bOk && c > b))
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
+        }
+
+        // 15 - InOrderEqual
+        public bool InOrderEqual(int a, int b, int c, bool equalOk)
+        {
+            if ((b > a && c > b) || (equalOk && b >= a && c >= b))
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
+        }
+
+        // 16 - LastDigit
+
+        public bool LastDigit(int a, int b, int c)
+        {
+            if ((a%10 == b%10) || (a%10 == c%10) || (b%10 == c%10))
+            {
+                return true;
+            }
+
+            else
+            {
+                return false; 
+            }
+        }
+
+        
     }
 }

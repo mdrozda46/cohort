@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Warmups;
 using NUnit.Framework;
+using NUnit.Framework.Constraints;
 
 
 namespace WarmupTests
@@ -150,6 +151,67 @@ namespace WarmupTests
         {
             //Act
             bool actual = _logic.Mod35(n);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase(false, false, false, true)]
+        [TestCase(false, false, true, false)]
+        [TestCase(true, false, false, false)]
+        public void AnswerCellTest(bool isMorning, bool isMom, bool isAsleep, bool expected)
+        {
+            //Act
+            bool actual = _logic.AnswerCell(isMorning, isMom, isAsleep);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase(1, 2, 3, true)]
+        [TestCase(3, 1, 2, true)]
+        [TestCase(3, 2, 2, false)]
+        public void TwoIsOneTest(int a, int b, int c, bool expected)
+        {
+            //Act
+            bool actual = _logic.TwoIsOne(a, b, c);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase(1, 2, 4, false, true)]
+        [TestCase(1, 2, 1, false, false)]
+        [TestCase(1, 1, 2, true, true)]
+        public void AreInOrderTest(int a, int b, int c, bool bOk, bool expected)
+        {
+            //Act
+            bool actual = _logic.AreInOrder(a, b, c, bOk);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+
+        [TestCase(2, 5, 11, false, true)]
+        [TestCase(5, 7, 6, false, false)]
+        [TestCase(5, 5, 7, true, true)]
+        public void InOrderEqualTest(int a, int b, int c, bool bOk, bool expected)
+        {
+            //Act
+            bool actual = _logic.InOrderEqual(a, b, c, bOk);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase(23, 19, 13, true)]
+        [TestCase(23, 19, 12, false)]
+        [TestCase(23, 19, 3, true)]
+        public void LastDigitTest(int a, int b, int c, bool expected)
+        {
+            //Act
+            bool actual = _logic.LastDigit(a, b, c);
 
             //Assert
             Assert.AreEqual(expected, actual);
