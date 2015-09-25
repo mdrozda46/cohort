@@ -179,7 +179,7 @@ namespace WarmupTests
 
         [TestCase("hi there", true)]
         [TestCase("hi", true)]
-        [TestCase(" high up", false)]
+        [TestCase("high up", false)]
 
         public void StartHiTest(string str, bool expected)
         {

@@ -195,10 +195,16 @@ namespace Warmups
         // 15 - StartHi
         public bool StartHi(string str)
         {
-            if (str.Substring(0, 2) == "hi")
+            if (str.Length < 3 && str.Substring(0, 2) == "hi")
             {
                 return true;
             }
+
+            else if (str.Substring(0, 3) == "hi ")
+            {
+                return true;
+            }
+
             return false;
         }
 
