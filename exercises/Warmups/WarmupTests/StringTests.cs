@@ -265,7 +265,7 @@ namespace WarmupTests
         [TestCase("edited", true)]
         [TestCase("edit", false)]
         [TestCase("ed", true)]
-        public void FrontAgain(string str, bool expected)
+        public void FrontAgainTest(string str, bool expected)
         {
             //Act
             bool actual = _strings.FrontAgain(str);
