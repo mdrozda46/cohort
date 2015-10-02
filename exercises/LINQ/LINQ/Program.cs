@@ -1,6 +1,9 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using System.Net.NetworkInformation;
+using System.Net.Sockets;
+using System.Security.Cryptography.X509Certificates;
 
 namespace LINQ
 {
@@ -17,11 +20,97 @@ namespace LINQ
          */
         static void Main()
         {
+            // 1
             //PrintOutOfStock();
+
+            // 2
             //InStockMoreThan3();
+
+            // 3
             //WashingtonCustomerOrder();
+
+            // 4
             //ProductNames();
-            IncreasedProductPrices();
+
+            // 5
+            //IncreasedProductPrices();
+
+            // 6
+            //UpperCaseProductNames();
+
+            // 7
+            //ProductsWithEvenNumInStock();
+
+            // 8
+            //RenameUnitPrice();
+
+            // 9
+            //PairsFromArrays();
+
+            // 10
+            SelectWhereOrderTotalLess500();
+
+            // 11
+
+            // 12
+
+            // 13
+
+            // 14
+
+            // 15
+
+            // 16
+
+            // 17
+
+            // 18
+
+            // 19
+
+            // 20 
+
+            // 21
+
+            // 22
+
+            // 23
+
+            // 24
+
+            // 25
+
+            // 26
+
+            // 27
+
+            // 28
+
+            // 29
+
+            // 30
+
+            // 31
+
+            // 32
+
+            // 33
+            //AllProductInCategoryInStock();
+
+            // 34
+
+            // 35
+
+            // 36
+
+            // 37
+
+            // 38
+
+            // 39
+
+            // 40
+
             Console.ReadLine();
         }
 
@@ -107,16 +196,97 @@ namespace LINQ
                 Console.WriteLine("Product Name: {0}\n Unit Price: {1}", product.ProductName, product.UnitPrice);
             }
         }
+
         //6. Create a new sequence of just product names in all upper case.
+        private static void UpperCaseProductNames()
+        {
+            var products = DataLoader.LoadProducts();
+
+            var results = from p in products
+                select p.ProductName.ToUpper();
+
+            foreach (var product in results)
+            {
+                Console.WriteLine(product);
+            }
+            ;
+        }
 
         //7. Create a new sequence with products with even numbers of units in stock.
+        private static void ProductsWithEvenNumInStock()
+        {
+            var products = DataLoader.LoadProducts();
+
+            var results = products.Where(p => p.UnitsInStock%2 == 0 && p.UnitsInStock != 0).Select(p => p.ProductName);
+               
+            foreach (var prod in results)
+            {
+                Console.WriteLine(prod);
+            }
+        }
 
         //8. Create a new sequence of products with ProductName, Category, and rename UnitPrice to Price.
+        private static void RenameUnitPrice()
+        {
+            var products = DataLoader.LoadProducts();
+
+            var results = products.Select(p => new
+            {
+                p.ProductName,
+                p.Category,
+                Price = p.UnitPrice
+            });
+
+            foreach (var product in results)
+            {
+                Console.WriteLine("Product Name: {0}, Category: {1}, Price: {2}", product.ProductName, product.Category, product.Price);
+            }
+
+        }
 
         //9. Make a query that returns all pairs of numbers from both arrays such that the number from numbersB is less than the number from numbersC.
-        
+        private static void PairsFromArrays()
+        {
+            var numbersB = DataLoader.NumbersB;
+            var numbersC = DataLoader.NumbersC;
+
+            var results = from b in numbersB
+                from c in numbersC
+                where b < c
+                select new
+                {
+                    b,
+                    c
+                };
+
+            foreach (var item in results)
+            {
+                Console.WriteLine("{0},{1}",item.b, item.c);
+            }
+
+        }    
+    
         //10. Select CustomerID, OrderID, and Total where the order total is less than 500.00.
-       
+        private static void SelectWhereOrderTotalLess500()
+        {
+            var customers = DataLoader.LoadCustomers();
+
+            var results = from c in customers
+                from o in c.Orders
+                where o.Total < 500
+                select new
+                {
+                    c.CustomerID,
+                    o.OrderID,
+                    o.Total
+                };
+
+            foreach (var customer in results)
+            {
+                Console.WriteLine("CustomerID: {0}, OrderID: {1}, Total: {2}", customer.CustomerID, customer.OrderID, customer.Total);
+            }
+        }
+
         //11. Write a query to take only the first 3 elements from NumbersA.
         
         //12. Get only the first 3 orders from customers in Washington.
@@ -162,7 +332,30 @@ namespace LINQ
         //32. Determine if NumbersB contains only numbers less than 9.
         
         //33. Get a grouped a list of products only for categories that have all of their products in stock.
-        
+        private static void AllProductInCategoryInStock()
+        {
+            var products = DataLoader.LoadProducts();
+
+            var results = from p in products
+
+                group p by p.Category
+                into pCats
+                          where pCats.All(x => x.UnitsInStock > 0)
+                select new {pCats.Key, coll = pCats};
+                    
+                    
+            foreach (var result in results)
+            {
+                Console.WriteLine("\n{0}", result.Key);
+                foreach (var product in result.coll)
+                {
+                    Console.WriteLine("\n{0} - {1}", product.UnitsInStock, product.ProductName);
+                }
+            }
+
+
+        }
+
         //34. Count the number of odds in NumbersA.
         
         //35. Display a list of CustomerIDs and only the count of their orders.
