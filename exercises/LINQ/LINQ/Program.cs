@@ -3,6 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
+using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 
 namespace LINQ
@@ -21,7 +22,7 @@ namespace LINQ
         static void Main()
         {
             // 1
-            //PrintOutOfStock();
+            PrintOutOfStock();
 
             // 2
             //InStockMoreThan3();
@@ -90,7 +91,7 @@ namespace LINQ
             //OrderedByCategory();
 
             // 24
-
+            //CustomerOrderByYearByMonth();
 
             // 25
             //CategoryList();
@@ -108,7 +109,7 @@ namespace LINQ
             //ProductID12();
 
             // 30
-
+            //ContainsProductID789();
 
             // 31
             //CategoriesItemOutOfStock();
@@ -126,19 +127,19 @@ namespace LINQ
             //CustomerIDsAndOrders();
 
             // 36
-           
+            //CategoriesAndProductCount();
 
             // 37
-
+            //CategoriesAndUnitInStock();
 
             // 38
-
+            //CategoriesLowestPrice();
 
             // 39
-
+            //CategoriesHighestPrice();
 
             // 40
-
+            //CategoriesAveragePrice();
 
             // Keep console open
             Console.ReadLine();
@@ -534,23 +535,25 @@ namespace LINQ
                         }
                 };
 
-            /* foreach (var item in results)
-             {
-                 Console.WriteLine(item.company);
+            foreach (var item in results)
+            {
+                Console.WriteLine(item.company);
 
-                 foreach (var year in item.yearGroups)
-                 {
-                     Console.WriteLine(year.year);
-                 }
-                     foreach (var month in item.Key)
-                     {
-                         Console.WriteLine();
-                     }
-                         foreach (var order in s)
-                         {
-                             Console.WriteLine();
-                         }
-             }*/
+                foreach (var yearGrp in item.yearGroups)
+                {
+                    Console.WriteLine("\t {0}", yearGrp.year);
+
+                    foreach (var month in yearGrp.monthGroups)
+                    {
+                        Console.WriteLine("\t\t {0}", month.month);
+
+                        foreach (var order in month.orders)
+                        {
+                            Console.WriteLine("\t\t\t {0}",order.OrderID);
+                        }
+                    }
+                }     
+            }
         }
 
         //25. Create a list of unique product category names.
@@ -628,7 +631,10 @@ namespace LINQ
         {
             var products = DataLoader.LoadProducts();
 
-            
+            var result = products.Any(p => p.ProductID == 789);
+
+            Console.WriteLine("This sequence contains ProductID 789, {0}", result);
+
         }
 
         //31. Get a list of categories that have at least one product out of stock.
@@ -717,32 +723,98 @@ namespace LINQ
             var products = DataLoader.LoadProducts();
 
             var results = from p in products
-                group p by new
-                {
-                    p.Category,
-                    p.ProductID
-                }
-                into pCats
+                group p by p.Category
+                into g
                 select new
                 {
-                    Category = pCats.Key.Category,
-                    ProductID = pCats.Key.ProductID,
-                    Count = pCats.Count()
+                    Category = g.Key,
+                    ProductCount = g.Count()
                 };
 
             foreach (var categories in results)
             {
-                Console.WriteLine("Category: {0}. Product Count: {1}", categories.Category, categories.Count);
+                Console.WriteLine("Category: {0}. Product Count: {1}", categories.Category, categories.ProductCount);
             }
         }
 
         //37. Display the total units in stock for each category.
+        private static void CategoriesAndUnitInStock()
+        {
+            var products = DataLoader.LoadProducts();
+
+            var results = from p in products
+                          group p by p.Category into g
+                          select new
+                          {
+                              Category = g.Key,
+                              UnitsInStock = g.Sum(p => p.UnitsInStock)
+                          };
+
+            foreach (var categories in results)
+            {
+                Console.WriteLine("Category: {0}. Product Count: {1}", categories.Category, categories.UnitsInStock);
+            }
+        }
 
         //38. Display the lowest priced product in each category.
+        private static void CategoriesLowestPrice()
+        {
+            var products = DataLoader.LoadProducts();
+
+            var results = from p in products
+                          group p by p.Category into g
+                          select new
+                          {
+                              Category = g.Key,
+                              LowestPriceItem = g.Min(p => p.UnitPrice)
+                          };
+
+            foreach (var categories in results)
+            {
+                Console.WriteLine("Category: {0}. Lowest Priced Item: {1}", categories.Category, categories.LowestPriceItem);
+            }
+        }
 
         //39. Display the highest priced product in each category.
+        private static void CategoriesHighestPrice()
+        {
+            var products = DataLoader.LoadProducts();
+
+            var results = from p in products
+                          group p by p.Category into g
+                          select new
+                          {
+                              Category = g.Key,
+                              HighestPriceItem = g.Max(p => p.UnitPrice)
+                          };
+
+            foreach (var categories in results)
+            {
+                Console.WriteLine("Category: {0}. Highest Priced Item: {1}", categories.Category, categories.HighestPriceItem);
+            }
+        }
 
         //40. Show the average price of product for each category.
+        private static void CategoriesAveragePrice()
+        {
+            var products = DataLoader.LoadProducts();
+
+            var results = from p in products
+                          group p by p.Category into g
+                          select new
+                          {
+                              Category = g.Key,
+                              AveragePrice = g.Average(p => p.UnitPrice)
+                          };
+
+
+            foreach (var categories in results)
+            {
+                Console.WriteLine("Category: {0}. Average Price: {1}", categories.Category, categories.AveragePrice);
+            }
+        }
+
+
 
     }
 }
