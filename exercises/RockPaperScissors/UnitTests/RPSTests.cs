@@ -30,7 +30,7 @@ namespace UnitTests
         [TestCase(Choice.Scissors, Result.Loss)]
         public void PaperPlayerTest(Choice choice, Result expected)
         {
-            //Setup
+           //Arrange
             AlwaysPaperPlayer p1 = new AlwaysPaperPlayer("Paper Player");
             Player p2;
 

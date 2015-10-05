@@ -18,7 +18,7 @@ namespace RockPaperScissors
             string input = "";
 
             Player p1 = new ComputerPlayer("Player 1");
-            Player p2 = new WeightedComputerPlayer("Player 2");
+            Player p2 = new ComputerPlayer("Player 2");
 
             do
             {

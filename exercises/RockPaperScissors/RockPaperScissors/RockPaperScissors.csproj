@@ -46,6 +46,7 @@
     <Compile Include="Enums\Choice.cs" />
     <Compile Include="Enums\Result.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="GameHistory.cs" />
     <Compile Include="Implementations\ComputerPlayer.cs" />
     <Compile Include="Implementations\HumanPlayer.cs" />
     <Compile Include="Implementations\Player.cs" />
