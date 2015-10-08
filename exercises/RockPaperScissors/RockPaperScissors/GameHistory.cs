@@ -24,14 +24,14 @@ namespace RockPaperScissors
 
         public void DisplaysResultsLog()
         {
-            Console.WriteLine("\n********** Results Log **********\n");
+            Console.WriteLine("\n****************************** Results Log ******************************\n");
 
             foreach (var key in ResultsLog)
             {
                 Console.WriteLine("Game {0}: {1}", key.Key, key.Value);
             }
 
-            Console.WriteLine("\n********** End Log **********\n");
+            Console.WriteLine("\n******************************** End Log ********************************\n");
         }
     }
 }

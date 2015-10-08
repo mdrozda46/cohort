@@ -47,14 +47,14 @@ namespace RockPaperScissors
 
         public void ProcessResult(Player Player1, Player Player2, MatchResult Result)
         {
-            Console.WriteLine("{0} picked {1}, {2} picked {3}", Player1.Name, 
+            Console.WriteLine("\n\t{0} picked {1}, {2} picked {3}", Player1.Name, 
                 Enum.GetName(typeof(Choice),Result.Player1_Choice),
                 Player2.Name, Enum.GetName(typeof(Choice),Result.Player2_Choice));
 
             switch (Result.Match_Result)
             {
                 case Enums.Result.Win:
-                    Console.WriteLine("{0} Wins!", Player1.Name);
+                    Console.WriteLine("\n\t{0} Wins!", Player1.Name);
                     history.AddResult(counter, 
                         String.Format("{0} picked {1}, {2} picked {3}", Player1.Name,
                         Enum.GetName(typeof(Choice), Result.Player1_Choice),
@@ -64,7 +64,7 @@ namespace RockPaperScissors
 
                     break;
                 case Enums.Result.Loss:
-                    Console.WriteLine("{0} Wins!", Player2.Name);
+                    Console.WriteLine("\n\t{0} Wins!", Player2.Name);
                     history.AddResult(counter,
                         String.Format("{0} picked {1}, {2} picked {3}", Player1.Name,
                         Enum.GetName(typeof(Choice), Result.Player1_Choice),
@@ -72,7 +72,7 @@ namespace RockPaperScissors
                         String.Format(", {0} Wins!", Player2.Name));
                     break;
                 default:
-                    Console.WriteLine("You both Tie!");
+                    Console.WriteLine("\n\tYou both Tie!");
                     history.AddResult(counter,
                         String.Format("{0} picked {1}, {2} picked {3}", Player1.Name,
                         Enum.GetName(typeof(Choice), Result.Player1_Choice),

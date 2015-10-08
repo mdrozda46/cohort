@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcadeConsole.UI", "ArcadeConsole.UI\ArcadeConsole.UI.csproj", "{9CF354BE-524F-4ED5-B5CF-1BFBA32EDBF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcadeConsole.Games", "ArcadeConsole.Games\ArcadeConsole.Games.csproj", "{0EC3C543-57DF-4DAD-9825-7CD3466C1F96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockPaperScissors", "..\..\..\..\..\..\_repos\cohort\exercises\RockPaperScissors\RockPaperScissors\RockPaperScissors.csproj", "{1A3C8EDB-DC93-4F40-A756-A584D218E502}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToe", "..\..\..\..\..\..\_repos\cohort\exercises\TicTacToe\TicTacToe\TicTacToe.csproj", "{D1C70B5D-41C7-4EA6-A9A6-5E71D55DB5EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcadeConsole.BLL", "ArcadeConsole.BLL\ArcadeConsole.BLL.csproj", "{3CF32660-6DD6-43C0-B7F4-3EC11A33B13C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9CF354BE-524F-4ED5-B5CF-1BFBA32EDBF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CF354BE-524F-4ED5-B5CF-1BFBA32EDBF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CF354BE-524F-4ED5-B5CF-1BFBA32EDBF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CF354BE-524F-4ED5-B5CF-1BFBA32EDBF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EC3C543-57DF-4DAD-9825-7CD3466C1F96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EC3C543-57DF-4DAD-9825-7CD3466C1F96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EC3C543-57DF-4DAD-9825-7CD3466C1F96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EC3C543-57DF-4DAD-9825-7CD3466C1F96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A3C8EDB-DC93-4F40-A756-A584D218E502}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A3C8EDB-DC93-4F40-A756-A584D218E502}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A3C8EDB-DC93-4F40-A756-A584D218E502}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A3C8EDB-DC93-4F40-A756-A584D218E502}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1C70B5D-41C7-4EA6-A9A6-5E71D55DB5EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1C70B5D-41C7-4EA6-A9A6-5E71D55DB5EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1C70B5D-41C7-4EA6-A9A6-5E71D55DB5EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1C70B5D-41C7-4EA6-A9A6-5E71D55DB5EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CF32660-6DD6-43C0-B7F4-3EC11A33B13C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CF32660-6DD6-43C0-B7F4-3EC11A33B13C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CF32660-6DD6-43C0-B7F4-3EC11A33B13C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CF32660-6DD6-43C0-B7F4-3EC11A33B13C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

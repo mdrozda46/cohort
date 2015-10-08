@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1A3C8EDB-DC93-4F40-A756-A584D218E502}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{3CF32660-6DD6-43C0-B7F4-3EC11A33B13C}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RockPaperScissors</RootNamespace>
-    <AssemblyName>RockPaperScissors</AssemblyName>
+    <RootNamespace>ArcadeConsole.BLL</RootNamespace>
+    <AssemblyName>ArcadeConsole.BLL</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,25 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Enums\Choice.cs" />
-    <Compile Include="Enums\Result.cs" />
-    <Compile Include="Game.cs" />
-    <Compile Include="GameHistory.cs" />
-    <Compile Include="Implementations\ComputerPlayer.cs" />
-    <Compile Include="Implementations\HumanPlayer.cs" />
-    <Compile Include="Implementations\Player.cs" />
-    <Compile Include="Implementations\WeightedComputerPlayer.cs" />
-    <Compile Include="Interfaces\IChoiceSelector.cs" />
-    <Compile Include="MatchResult.cs" />
+    <Compile Include="GameFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RockPaperScissors1.cs" />
-    <Compile Include="RPSGame.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\ArcadeGameConsole\ArcadeConsole.Games\ArcadeConsole.Games.csproj">
+    <ProjectReference Include="..\..\..\..\..\..\..\_repos\cohort\exercises\RockPaperScissors\RockPaperScissors\RockPaperScissors.csproj">
+      <Project>{1a3c8edb-dc93-4f40-a756-a584d218e502}</Project>
+      <Name>RockPaperScissors</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\..\..\_repos\cohort\exercises\TicTacToe\TicTacToe\TicTacToe.csproj">
+      <Project>{d1c70b5d-41c7-4ea6-a9a6-5e71d55db5ef}</Project>
+      <Name>TicTacToe</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArcadeConsole.Games\ArcadeConsole.Games.csproj">
       <Project>{0ec3c543-57df-4dad-9825-7cd3466c1f96}</Project>
       <Name>ArcadeConsole.Games</Name>
     </ProjectReference>

@@ -20,7 +20,7 @@ namespace RockPaperScissors.Implementations
 
             while (choice == Choice.Unknown)
             {
-                Console.Write("{0}: Enter a choice (R)ock, (P)aper, (S)cissors: ", Name);
+                Console.Write("\n{0}: Enter a choice (R)ock, (P)aper, (S)cissors: ", Name);
                 string input = Console.ReadLine();
 
 
