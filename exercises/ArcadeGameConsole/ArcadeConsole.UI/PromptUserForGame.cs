@@ -20,12 +20,12 @@ namespace ArcadeConsole.UI
                 Console.WriteLine("\t1 - Rocks, Paper, Scissors");
                 Console.WriteLine("\t2 - Tic Tac Toe");
                 Console.WriteLine("\t3 - BattleShip");
+                Console.WriteLine("\t4 - Quit");
 
                 _userInput = Console.ReadLine();
 
-                int.TryParse(_userInput, out _gameNumber);
 
-            } while (!(int.TryParse(_userInput, out _gameNumber)) || (_gameNumber > 3));
+            } while (!(int.TryParse(_userInput, out _gameNumber)) || (_gameNumber == 0 || _gameNumber > 4 ));
 
             return _gameNumber;
         }

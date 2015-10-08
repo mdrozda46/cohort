@@ -15,7 +15,7 @@ namespace RockPaperScissors
 
         public Result PlayRound(Player p1, Player p2)
         {
-
+            Console.Clear();
             MatchResult result = new MatchResult();
             result.Player1_Choice = p1.GetChoice();
             result.Player2_Choice = p2.GetChoice();

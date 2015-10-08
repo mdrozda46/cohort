@@ -26,7 +26,7 @@ namespace RockPaperScissors
                 Console.Clear();
                 newGame.PlayRound(p1, p2);
 
-                Console.WriteLine("Would you like to play again? (enter \"Q\" to Quit)");
+                Console.WriteLine("Press Enter to play again or (Q) to quit.");
                 input = Console.ReadLine();
 
             } while (input.ToUpper() != "Q");

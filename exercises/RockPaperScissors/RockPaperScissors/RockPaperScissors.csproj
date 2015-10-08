@@ -55,16 +55,9 @@
     <Compile Include="MatchResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RockPaperScissors1.cs" />
-    <Compile Include="RPSGame.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\ArcadeGameConsole\ArcadeConsole.Games\ArcadeConsole.Games.csproj">
-      <Project>{0ec3c543-57df-4dad-9825-7cd3466c1f96}</Project>
-      <Name>ArcadeConsole.Games</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

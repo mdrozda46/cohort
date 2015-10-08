@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using RockPaperScissors;
 using TicTacToe;
 using ArcadeConsole.Games;
+using ArcadeConsole.Games.Games;
+using BattleShip.UI;
 
 namespace ArcadeConsole.BLL
 {
@@ -19,6 +21,8 @@ namespace ArcadeConsole.BLL
                     return new RPSGame();
                 case 2:
                     return new TicTacToeGame();
+                case 3:
+                    return new BattleShipGame();
                 default:
                     throw new NotSupportedException(String.Format("Game {0} is not supported!", GameNum));
             }

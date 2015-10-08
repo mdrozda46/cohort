@@ -14,11 +14,9 @@ namespace TicTacToe
             string player1Marker = "X";
             string player2Name;
             string player2Marker = "O";
-            string[] gameBoardMarkers = new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
             string currentPlayer;
-            string playerInput;
+            string playerInput = "N";
             int squareSelected;
-            int movesPlayed = 0;
             bool isThereAWinner = false;
             GameLogic gameBoard = new GameLogic();
 
@@ -31,11 +29,15 @@ namespace TicTacToe
             Console.WriteLine("\nPlayer 2 enter your name:");
             player2Name = Console.ReadLine();
 
+            do { 
             Console.WriteLine("\nLet's play Tic Tac Toe!!!");
             Console.WriteLine("\n  *{0} your marker is {1}", player1Name, player1Marker);
             Console.WriteLine("  *{0} your marker is {1}", player2Name, player2Marker);
+            int movesPlayed = 0;
+            isThereAWinner = false;
+            string[] gameBoardMarkers = new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
-            currentPlayer = player1Name;
+                currentPlayer = player1Name;
 
             while (!isThereAWinner)
             {
@@ -113,7 +115,10 @@ namespace TicTacToe
                 Console.WriteLine("\nThe game was a tie.");
             }
 
-            Console.ReadLine();
+            Console.WriteLine();
+            Console.WriteLine("Press Enter to play again or (Q) to quit.");
+            playerInput = Console.ReadLine();
+        } while (playerInput.ToUpper() != "Q");
 
         }
     }

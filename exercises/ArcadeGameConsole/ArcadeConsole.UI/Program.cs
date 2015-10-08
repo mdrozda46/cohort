@@ -12,22 +12,26 @@ namespace ArcadeConsole.UI
     {
         static void Main(string[] args)
         {
-            string keepPlaying = "Yes";
+            bool keepPlaying = true;
             do
             {
                 // Prompt user to pick a game
                 var GameNum = PromptUserForGame.pickGame();
 
-                // Generate the game object
-                var Game = GameFactory.CreateGame(GameNum);
+                if (GameNum < 4)
+                {
+                    // Generate the game object
+                    var Game = GameFactory.CreateGame(GameNum);
 
-                // Load Game
-                LoadGame(Game);
-              
-                Console.Clear();;
-                Console.WriteLine("\n Would you like to play another game? (Enter \"Q\" to Quit)");
-                keepPlaying = Console.ReadLine().ToUpper();
-            } while (keepPlaying != "Q");
+                    // Load Game
+                    LoadGame(Game);
+                }
+
+                else
+                {
+                    keepPlaying = false;
+                }
+            } while (keepPlaying);
 
         }
 

@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Speech" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,10 +41,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Games\BattleShipGame.cs" />
+    <Compile Include="Games\RPSGame.cs" />
+    <Compile Include="Games\TicTacToeGame.cs" />
     <Compile Include="IGame.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\BattleshipForConsole\BattleShip_Start\BattleShip.BLL\BattleShip.BLL.csproj">
+      <Project>{f8b43da0-2853-4b79-8bfe-b25c658c4a9b}</Project>
+      <Name>BattleShip.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\BattleshipForConsole\BattleShip_Start\BattleShip.UI\BattleShip.UI.csproj">
+      <Project>{63998525-a24e-447f-b35f-76096bfb8d6b}</Project>
+      <Name>BattleShip.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\RockPaperScissors\RockPaperScissors\RockPaperScissors.csproj">
+      <Project>{1a3c8edb-dc93-4f40-a756-a584d218e502}</Project>
+      <Name>RockPaperScissors</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\TicTacToe\TicTacToe\TicTacToe.csproj">
+      <Project>{d1c70b5d-41c7-4ea6-a9a6-5e71d55db5ef}</Project>
+      <Name>TicTacToe</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

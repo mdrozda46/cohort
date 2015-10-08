@@ -52,6 +52,14 @@
       <Project>{d1c70b5d-41c7-4ea6-a9a6-5e71d55db5ef}</Project>
       <Name>TicTacToe</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\BattleshipForConsole\BattleShip_Start\BattleShip.BLL\BattleShip.BLL.csproj">
+      <Project>{f8b43da0-2853-4b79-8bfe-b25c658c4a9b}</Project>
+      <Name>BattleShip.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\BattleshipForConsole\BattleShip_Start\BattleShip.UI\BattleShip.UI.csproj">
+      <Project>{63998525-a24e-447f-b35f-76096bfb8d6b}</Project>
+      <Name>BattleShip.UI</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ArcadeConsole.Games\ArcadeConsole.Games.csproj">
       <Project>{0ec3c543-57df-4dad-9825-7cd3466c1f96}</Project>
       <Name>ArcadeConsole.Games</Name>
