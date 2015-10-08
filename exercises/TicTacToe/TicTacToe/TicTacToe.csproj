@@ -44,11 +44,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GameLogic.cs" />
-    <Compile Include="UI.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="TicTacToeGame.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Users\Apprentice\Documents\Visual Studio 2015\Projects\ArcadeGameConsole\ArcadeConsole.Games\ArcadeConsole.Games.csproj">
+      <Project>{0ec3c543-57df-4dad-9825-7cd3466c1f96}</Project>
+      <Name>ArcadeConsole.Games</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
