@@ -23,7 +23,6 @@ namespace WarmupTests
         [TestCase("Hi", 2, "HiHi")]
         [TestCase("Hi", 3, "HiHiHi")]
         [TestCase("Hi", 1, "Hi")]
-
         public void StringTimesTest(string str, int num, string expected)
         {
             //Act
@@ -37,7 +36,6 @@ namespace WarmupTests
         [TestCase("Chocolate", 2, "ChoCho")]
         [TestCase("Chocolate", 3, "ChoChoCho")]
         [TestCase("Abc", 3, "AbcAbcAbc")]
-
         public void FrontTimesTest(string str, int n, string expected)
         {
             //Act
@@ -50,7 +48,6 @@ namespace WarmupTests
         [TestCase("abcxx", 1)]
         [TestCase("xxx", 2)]
         [TestCase("xxxx", 3)]
-
         public void CountXXTest(string str, int expected)
         {
             //Act
@@ -63,7 +60,6 @@ namespace WarmupTests
         [TestCase("axxbb", true)]
         [TestCase("axaxxax", false)]
         [TestCase("xxxxx", true)]
-
         public void DoubleXTest(string str, bool expected)
         {
             //Act
@@ -76,7 +72,6 @@ namespace WarmupTests
         [TestCase("Hello", "Hlo")]
         [TestCase("Hi", "H")]
         [TestCase("Heeololeo", "Hello")]
-
         public void EveryOtherTest(string str, string expected)
         {
             //Act
@@ -89,7 +84,6 @@ namespace WarmupTests
         [TestCase("Code", "CCoCodCode")]
         [TestCase("abc", "aababc")]
         [TestCase("ab", "aab")]
-
         public void StringSplosionTest(string str, string expected)
         {
             //Act
@@ -103,7 +97,6 @@ namespace WarmupTests
         [TestCase("hixxhi", 1)]
         [TestCase("xaxxaxaxx", 1)]
         [TestCase("axxxaaxx", 2)]
-
         public void CountLast2Test(string str, int expected)
         {
             //Act
@@ -116,7 +109,6 @@ namespace WarmupTests
         [TestCase(new int[] {1, 2, 9}, 1)]
         [TestCase(new int [] {1, 9, 9}, 2)]
         [TestCase(new int[] { 1, 9, 9, 3, 9}, 3)]
-
         public void Count9Test(int[] numbers, int expected)
         {
             //Act
@@ -129,7 +121,6 @@ namespace WarmupTests
         [TestCase(new int[] { 1, 2, 9, 3, 4}, true)]
         [TestCase(new int[] { 1, 2, 3, 4, 9}, false)]
         [TestCase(new int[] { 1, 2, 3, 4, 5}, false)]
-
         public void ArrayFront9Test(int[] numbers, bool expected)
         {
             //Act
@@ -142,7 +133,6 @@ namespace WarmupTests
         [TestCase(new int[] { 1, 1, 2, 3, 1 }, true)]
         [TestCase(new int[] { 1, 1, 2, 4, 1 }, false)]
         [TestCase(new int[] { 1, 1, 2, 1, 2, 3 }, true)]
-
         public void Array123Test(int[] numbers, bool expected)
         {
             //Act
@@ -155,7 +145,6 @@ namespace WarmupTests
         [TestCase("xxcaazz", "xxbaaz", 3)]
         [TestCase("abc", "abc", 2)]
         [TestCase("abc", "axc", 0)]
-
         public void SubStringMatchTest(string a, string b, int expected)
         {
             //Act
@@ -168,7 +157,6 @@ namespace WarmupTests
         [TestCase("xxHxix", "xHix")]
         [TestCase("abxxxcd", "abcd")]
         [TestCase("xabxxxcdx", "xabcdx")]
-
         public void StringXTest(string str, string expected)
         {
             //Act
@@ -181,7 +169,6 @@ namespace WarmupTests
         [TestCase("kitten", "kien")]
         [TestCase("Chocolate", "Chole")]
         [TestCase("CodingHorror", "Congrr")]
-
         public void AltPairsTest(string str, string expected)
         {
             //Act
@@ -194,7 +181,6 @@ namespace WarmupTests
         [TestCase("yakpak", "pak")]
         [TestCase("pakyak", "pak")]
         [TestCase("yak123ya", "123ya")]
-
         public void DoNotYakTest(string str, string expected)
         {
             //Act
@@ -208,7 +194,6 @@ namespace WarmupTests
         [TestCase(new int[] { 6, 6, 2}, 1)]
         [TestCase(new int[] { 6, 6, 2, 6 }, 1)]
         [TestCase(new int[] { 6, 7, 2, 6 }, 1)]
-
         public void Array667Test(int[] numbers, int expected)
         {
             //Act
@@ -221,7 +206,6 @@ namespace WarmupTests
         [TestCase(new int[] { 1, 1, 2, 2, 1 }, true)]
         [TestCase(new int[] { 1, 1, 2, 2, 2, 1 }, false)]
         [TestCase(new int[] { 1, 1, 1, 2, 2, 2, 1 }, false)]
-
         public void NoTriplesTest(int[] numbers, bool expected)
         {
             //Act
@@ -234,7 +218,6 @@ namespace WarmupTests
         [TestCase(new int[] { 1, 2, 7, 1 }, true)]
         [TestCase(new int[] { 1, 2, 8, 1 }, false)]
         [TestCase(new int[] { 2, 7, 1}, true)]
-
         public void Pattern51Test(int[] numbers, bool expected)
         {
             //Act

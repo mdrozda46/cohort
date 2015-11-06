@@ -46,14 +46,13 @@ namespace SGBank.Data
             {
                 for (int i = 1; i <= account.AccountNumber; i++)
                 {
-                    /*if (i == account.AccountNumber+1)
-                    {
-                        writer.WriteLine(String.Format("{0},{1},{2},{3}"), account.AccountNumber, account.FirstName,
-                            account.LastName, account.Balance);
-                        Console.WriteLine("Updating file");
-                    }*/
-                   
-                }
+                    var accounts = File.ReadAllLines(_filePath);
+                    accounts[account.AccountNumber]= String.Format("{0},{1},{2},{3}", account.AccountNumber, account.FirstName,account.LastName, account.Balance);
+                    File.WriteAllLines(_filePath,accounts);
+                    Console.WriteLine("Updating file");
+               
+
+            }
             }
             return account.Balance;
         }
